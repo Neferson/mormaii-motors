@@ -15,16 +15,18 @@
         <div
           class="col-12 col-sm-4 q-pl-lg q-pr-lg"
           style="border-right: 1px solid #ddd;"
+          v-for="(prodInfo, index) in info.subInfo"
+          :key="index"
         >
           <div class="text-h5 text-bold">
-            200kg
+            {{ prodInfo.valor }}
           </div>
           <div class="text-subtitle1">
-            Suporta até
+             {{ prodInfo.titulo }}
           </div>
         </div>
 
-        <div class="col-12 col-sm-6 q-pl-lg q-pr-lg" style="border-right: 1px solid #ddd;">
+        <!-- <div class="col-12 col-sm-6 q-pl-lg q-pr-lg" style="border-right: 1px solid #ddd;">
           <div class="text-h5 text-bold">
             4 há 8 horas
           </div>
@@ -40,7 +42,7 @@
           <div class="text-subtitle1">
             Velocidade
           </div>
-        </div>
+        </div> -->
       </div>
 
       <q-space />
