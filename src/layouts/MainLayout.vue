@@ -128,6 +128,7 @@
               color="white"
               outline text-color="black"
               :label="slider.titulo"
+              @click="abrirModal(slider.produtoId)"
              />
 
           </q-card-section>
@@ -302,7 +303,7 @@ export default {
           {
             produtoId: 4,
             titulo: 'MOUNTAIN E-BIKE',
-            image: 'imgs/6.png',
+            image: 'imgs/4.png',
             info: [
               {
                 titulo: 'Autonomia',
@@ -714,6 +715,129 @@ export default {
               {
                 titulo: 'Peso Líquido / Bruto',
                 valor: '72 /75 kg',
+              },
+            ],
+          },
+          {
+            id: 4,
+            nome: 'Mountain E-Bike',
+            descricao: `Com autonomia de até 8 horas, nossas motos vão
+            te levar a um novo momento em sua vida. O design único
+            aliado ao conforto e autonomia da NAJA, facilitam o uso
+            diário em qualquer lugar. Além disso, você tem a segurança
+            de andar por aí em um produto totalmente legalizado.`,
+            subInfo: [
+              {
+                titulo: 'Autonomia',
+                valor: '20-45 km',
+              },
+              {
+                titulo: 'Capacidade máxima',
+                valor: '100 Kg',
+              },
+              {
+                titulo: 'Velocidade máxima',
+                valor: '35 km/h',
+              },
+            ],
+            cores: [
+              'red',
+              'black',
+              'white',
+            ],
+            images: [],
+            fichaTecnica: [
+              {
+                titulo: 'Dimensões (C * L * A)',
+                valor: '187 cm * 67 cm * 115 cm',
+              },
+              {
+                titulo: 'Distância entre eixos',
+                valor: '112 cm',
+              },
+              {
+                titulo: 'Peso Líquido (kg)',
+                valor: '22,5 kg',
+              },
+              {
+                titulo: 'Peso Bruto (kg)',
+                valor: '25 kg',
+              },
+              {
+                titulo: 'Quadro',
+                valor: 'Alumínio',
+              },
+              {
+                titulo: 'Capacidade máxima',
+                valor: '100 kg',
+              },
+              {
+                titulo: 'Garfo',
+                valor: 'Suspensão MTB com trava de bloqueio',
+              },
+              {
+                titulo: 'Câmbio',
+                valor: '7 marchas cabide montagem direta',
+              },
+              {
+                titulo: 'Passador de marcha',
+                valor: 'MicroShift 51-8*',
+              },
+              {
+                titulo: 'Câmbio traseiro',
+                valor: 'MicroShift TZ-50*',
+              },
+              {
+                titulo: 'Pneu',
+                valor: 'fat 26 x 4.0',
+              },
+              {
+                titulo: 'Freios',
+                valor: 'Disco',
+              },
+              {
+                titulo: 'Motor',
+                valor: '250 W',
+              },
+              {
+                titulo: 'Manopla de velocidade',
+                valor: 'Sim',
+              },
+              {
+                titulo: 'Pedal assistido',
+                valor: 'Sim',
+              },
+              {
+                titulo: 'Velocidade máxima',
+                valor: '35 km',
+              },
+              {
+                titulo: 'Autonomia (CNTP)',
+                valor: '30 – 45 km, peso 75 kg > mantendo 20 - 25 km/h',
+              },
+              {
+                titulo: 'Bateria',
+                valor: 'Lítio - 36 V / 10.4 A',
+              },
+              {
+                titulo: 'Carregador',
+                valor: 'Bivolt',
+              },
+              {
+                titulo: 'Tempo de recarga',
+                valor: '6 – 8 h',
+              },
+              {
+                titulo: 'Bateria (kg)',
+                valor: '8 Kg',
+              },
+              {
+                titulo: 'Consumo de energia',
+                valor: '≤ 1.2kw/h',
+              },
+              {
+                titulo: 'Luz dianteira',
+                valor: 'Sim',
               },
             ],
           },
