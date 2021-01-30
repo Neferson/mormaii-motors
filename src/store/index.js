@@ -1,12 +1,6 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
 
-import VueThreeSixty from 'vue-360';
-
-import 'vue-360/dist/css/style.css';
-
-Vue.use(VueThreeSixty);
-
 // import example from './module-example'
 
 Vue.use(Vuex);

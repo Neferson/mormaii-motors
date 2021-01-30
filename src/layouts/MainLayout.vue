@@ -100,7 +100,7 @@
                   :size="($q.screen.lt.lg) ? 'md' : 'lg'"
                   color="white"
                   label="Ver mais informações"
-                  @click="abrirModal()"
+                  @click="abrirModal(slider.produtoId)"
                 />
               </div>
             </div>
@@ -165,131 +165,7 @@
       transition-show="slide-up"
       transition-hide="slide-down"
     >
-      <q-card>
-        <q-card-section class="row items-center q-pb-none bg-grey-2 q-pa-lg">
-          <q-btn
-            icon="close"
-            color="red"
-            dense
-            v-close-popup
-            class="absolute-top-right q-mt-sm q-mr-sm"
-          />
-          <div class="text-h3 text-bold col-12 to">
-            {{ produtos.info.nome }}
-          </div>
-          <div class="row q-mt-md">
-            <div
-              class="col-12 col-sm-4 q-pl-lg q-pr-lg"
-              style="border-right: 1px solid #ddd;"
-            >
-              <div class="text-h5 text-bold">
-                200kg
-              </div>
-              <div class="text-subtitle1">
-                Suporta até
-              </div>
-            </div>
-
-            <div class="col-12 col-sm-6 q-pl-lg q-pr-lg" style="border-right: 1px solid #ddd;">
-              <div class="text-h5 text-bold">
-                4 há 8 horas
-              </div>
-              <div class="text-subtitle1">
-                Autonomia
-              </div>
-            </div>
-
-            <div class="col-12 col-sm-2 q-pl-lg q-pr-lg">
-              <div class="text-h5 text-bold">
-                55km
-              </div>
-              <div class="text-subtitle1">
-                Velocidade
-              </div>
-            </div>
-          </div>
-
-          <q-space />
-
-        </q-card-section>
-        <q-card-section class="no-padding">
-          <div class="row bg-teal-2 text-grey-10 q-mb-lg" style="padding: 40px 15px;">
-            <div class="q-pt-lg q-pb-lg col-lg-12  col-md-12 col-sm-12 col-12 ">
-              <q-img :src="'imgs/1.png'" class="" />
-            </div>
-            <!-- <div class="col-lg-12 col-md-12 col-sm-12 col-12 q-pt-lg">
-              <div class="text-h3 q-pt-xs">
-                {{ produtos.info.nome }}
-              </div>
-              <br>
-              <div class="text-h6 text-normal">
-              {{ produtos.info.descricao }}
-              </div>
-            </div> -->
-          </div>
-          <div class="row">
-
-            <div
-              class="col-lg-7 col-md-12 col-sm-12 col-12 q-pl-md q-pr-md q-mb-md"
-            >
-
-              <div class="text-h4 q-mb-md">Visualização 360°</div>
-              <VueProductSpinner
-                :images="images"
-                :slider="false"
-                :mouseDrag="true"
-                :mouseWheel="false"
-                auto
-                class=""
-                style="cursor: w-resize;"
-              >
-              </VueProductSpinner>
-
-              <q-separator class="q-mt-lg q-mb-lg" />
-
-              <div
-                class="col-lg-7 col-md-6 col-sm-12 col-12 q-pr-md q-mb-md order-last"
-              >
-                <div class="text-h5">Cores</div>
-                <!-- <div class="text-subtitle1">Disponível nas cores</div> -->
-                <div class="container-cor">
-                  <q-avatar
-                    v-for="(cor, index) in produtos.info.cores"
-                    :color="cor"
-                    rounded
-                    text-color="white"
-                    icon=""
-                    :key="index"
-                    class="q-mr-md"
-                    style="border: solid 1px #ccc;"
-                  />
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-5 col-sm-12 col-12 q-pl-md q-pr-md q-mb-md">
-              <div class="text-h4 q-mb-md">Ficha Técnica</div>
-
-              <q-markup-table separator="cell" bordered dense flat>
-                <tbody>
-                  <tr
-                    v-for="(ficha, index) in produtos.info.fichaTecnica"
-                    :key="index"
-                  >
-                    <td class="text-left text-subtitle1 text-bold">
-                      {{ ficha.titulo }}
-                    </td>
-                    <td class="text-right text-subtitle1">
-                      {{ ficha.valor }}
-                    </td>
-                  </tr>
-                </tbody>
-              </q-markup-table>
-            </div>
-          </div>
-        </q-card-section>
-        <q-card-actions align="right">
-        </q-card-actions>
-      </q-card>
+      <ProdutoDialog :info="produto"></ProdutoDialog>
     </q-dialog>
 
   </q-layout>
@@ -301,18 +177,19 @@ import VueSlickCarousel from 'vue-slick-carousel';
 import 'vue-slick-carousel/dist/vue-slick-carousel.css';
 import 'vue-slick-carousel/dist/vue-slick-carousel-theme.css';
 
-import VueProductSpinner from 'vue-product-spinner';
+import ProdutoDialog from './ProdutoDialog'
 
 export default {
   name: 'MainLayout',
   components: {
     VueSlickCarousel,
-    VueProductSpinner,
+    ProdutoDialog,
   },
   data() {
     return {
       slide: 1,
       modalInfo: false,
+      produto: {},
       settingsSlider: {
         autoplay: true,
         dots: true,
@@ -442,106 +319,405 @@ export default {
             ],
           },
         ],
-        info: {
-          nome: 'Naja R2',
-          descricao: `Com autonomia de até 8 horas, nossas motos vão
-          te levar a um novo momento em sua vida. O design único
-          aliado ao conforto e autonomia da NAJA, facilitam o uso
-          diário em qualquer lugar. Além disso, você tem a segurança
-          de andar por aí em um produto totalmente legalizado.`,
-          cores: [
-            'red',
-            'black',
-            'white',
-          ],
-          images: [],
-          fichaTecnica: [
-            {
-              titulo: 'Motor',
-              valor: '2000W',
-            },
-            {
-              titulo: 'Inclinação Máxima',
-              valor: '40graus',
-            },
-            {
-              titulo: 'Velocidade Máxima',
-              valor: '61km/h',
-            },
-            {
-              titulo: 'Bateria Litium',
-              valor: '60V 20A',
-            },
-            {
-              titulo: 'Alcance / Range / Gama',
-              valor: '35-55km',
-            },
-            {
-              titulo: 'Farol / Head Light',
-              valor: 'Sim',
-            },
-            {
-              titulo: 'Horn / Guidão',
-              valor: 'Sim',
-            },
-            {
-              titulo: 'Velocímetro / Speedometer',
-              valor: 'Sim',
-            },
-            {
-              titulo: 'Retrovisor',
-              valor: 'Sim',
-            },
-            {
-              titulo: 'Suspensão Dianteira',
-              valor: 'Sim',
-            },
-            {
-              titulo: 'Suspensão Traseira',
-              valor: 'Sim',
-            },
-            {
-              titulo: 'Luz de Freio',
-              valor: 'Sim',
-            },
-            {
-              titulo: 'Alarme',
-              valor: 'Sim',
-            },
-            {
-              titulo: 'Assento Simples',
-              valor: 'Sim',
-            },
-            {
-              titulo: 'Assento Duplo',
-              valor: 'Não*',
-            },
-            {
-              titulo: 'Carregador',
-              valor: 'Sim',
-            },
-            {
-              titulo: 'Tempo de Carga',
-              valor: '6-8h',
-            },
-            {
-              titulo: 'Peso Máximo Suportado',
-              valor: '200kg',
-            },
-            {
-              titulo: 'Roda',
-              valor: '13 Polegadas',
-            },
-            {
-              titulo: 'Medidas da Caixa',
-              valor: '186*38*80',
-            },
-            {
-              titulo: 'Peso Líquido / Bruto',
-              valor: '72 /75 kg',
-            },
-          ],
-        },
+        lista: [
+          {
+            id: 1,
+            nome: 'Naja',
+            descricao: `Com autonomia de até 8 horas, nossas motos vão
+            te levar a um novo momento em sua vida. O design único
+            aliado ao conforto e autonomia da NAJA, facilitam o uso
+            diário em qualquer lugar. Além disso, você tem a segurança
+            de andar por aí em um produto totalmente legalizado.`,
+            subInfo: [
+              {
+                titulo: 'Autonomia',
+                valor: '34 km',
+              },
+              {
+                titulo: 'Capacidade máxima',
+                valor: '175 Kg',
+              },
+              {
+                titulo: 'Velocidade máxima',
+                valor: '50 km/h',
+              },
+            ],
+            cores: [
+              'red',
+              'black',
+              'white',
+            ],
+            images: [],
+            fichaTecnica: [
+              {
+                titulo: 'Motor',
+                valor: '2000W',
+              },
+              {
+                titulo: 'Inclinação Máxima',
+                valor: '40graus',
+              },
+              {
+                titulo: 'Velocidade Máxima',
+                valor: '61km/h',
+              },
+              {
+                titulo: 'Bateria Litium',
+                valor: '60V 20A',
+              },
+              {
+                titulo: 'Alcance / Range / Gama',
+                valor: '35-55km',
+              },
+              {
+                titulo: 'Farol / Head Light',
+                valor: 'Sim',
+              },
+              {
+                titulo: 'Horn / Guidão',
+                valor: 'Sim',
+              },
+              {
+                titulo: 'Velocímetro / Speedometer',
+                valor: 'Sim',
+              },
+              {
+                titulo: 'Retrovisor',
+                valor: 'Sim',
+              },
+              {
+                titulo: 'Suspensão Dianteira',
+                valor: 'Sim',
+              },
+              {
+                titulo: 'Suspensão Traseira',
+                valor: 'Sim',
+              },
+              {
+                titulo: 'Luz de Freio',
+                valor: 'Sim',
+              },
+              {
+                titulo: 'Alarme',
+                valor: 'Sim',
+              },
+              {
+                titulo: 'Assento Simples',
+                valor: 'Sim',
+              },
+              {
+                titulo: 'Assento Duplo',
+                valor: 'Não*',
+              },
+              {
+                titulo: 'Carregador',
+                valor: 'Sim',
+              },
+              {
+                titulo: 'Tempo de Carga',
+                valor: '6-8h',
+              },
+              {
+                titulo: 'Peso Máximo Suportado',
+                valor: '200kg',
+              },
+              {
+                titulo: 'Roda',
+                valor: '13 Polegadas',
+              },
+              {
+                titulo: 'Medidas da Caixa',
+                valor: '186*38*80',
+              },
+              {
+                titulo: 'Peso Líquido / Bruto',
+                valor: '72 /75 kg',
+              },
+            ],
+          },
+          {
+            id: 2,
+            nome: 'Lince',
+            descricao: `Com autonomia de até 8 horas, nossas motos vão
+            te levar a um novo momento em sua vida. O design único
+            aliado ao conforto e autonomia da NAJA, facilitam o uso
+            diário em qualquer lugar. Além disso, você tem a segurança
+            de andar por aí em um produto totalmente legalizado.`,
+            subInfo: [
+              {
+                titulo: 'Autonomia',
+                valor: '58 km',
+              },
+              {
+                titulo: 'Capacidade máxima',
+                valor: '207 Kg',
+              },
+              {
+                titulo: 'Velocidade máxima',
+                valor: '50 km/h',
+              },
+            ],
+            cores: [
+              'red',
+              'blue-5',
+              'black',
+            ],
+            images: [],
+            fichaTecnica: [
+              {
+                titulo: 'Dimensões (C * L * A)',
+                valor: '1980 mm * 860 mm * 1100 mm',
+              },
+              {
+                titulo: 'Apoio para cada pé do condutor (C * L)',
+                valor: '160 mm * 100 mm',
+              },
+              {
+                titulo: 'Distância entre eixos',
+                valor: '1410 mm',
+              },
+              {
+                titulo: 'Peso (kg)',
+                valor: '74 kg',
+              },
+              {
+                titulo: 'Material',
+                valor: 'Metal',
+              },
+              {
+                titulo: 'Capacidade máxima',
+                valor: '207 kg',
+              },
+              {
+                titulo: 'Pneu dianteiro (TAM)',
+                valor: '165/45-12',
+              },
+              {
+                titulo: 'Pneu traseiro (TAM)',
+                valor: '215/40-12',
+              },
+              {
+                titulo: 'Freio dianteiro',
+                valor: 'Disco, diâmetro 180 mm (hidráulico)',
+              },
+              {
+                titulo: 'Freio traseiro',
+                valor: 'Disco, diâmetro 180 mm (hidráulico)',
+              },
+              {
+                titulo: 'Suspensão Dianteira',
+                valor: 'Sim',
+              },
+              {
+                titulo: 'Suspensão Traseira',
+                valor: 'Sim',
+              },
+              {
+                titulo: 'Motor',
+                valor: '2000W',
+              },
+              {
+                titulo: 'Proteção de corrente de sobrecarga',
+                valor: 'Sim',
+              },
+              {
+                titulo: 'Velocidade máxima',
+                valor: '50 km/h ≤',
+              },
+              {
+                titulo: 'Torque máximo',
+                valor: '63 Nm',
+              },
+              {
+                titulo: 'Consumo de energia',
+                valor: '25 Wh/km',
+              },
+              {
+                titulo: 'Autonomia',
+                valor: '58 km',
+              },
+              {
+                titulo: 'Bateria',
+                valor: 'Lítio, 126 cells / 60 V / 20 Ah',
+              },
+              {
+                titulo: 'Bateria (kg)',
+                valor: '8 Kg',
+              },
+              {
+                titulo: 'Ângulo máximo de manobra, roda dianteira',
+                valor: '49° ambos os lados',
+              },
+              {
+                titulo: 'Modo de aceleração',
+                valor: '1 - Modo padrão / 2 - Modo econômico / 3 - Modo esporte',
+              },
+              {
+                titulo: 'Inclinação máxima',
+                valor: '28º',
+              },
+              {
+                titulo: 'Farol',
+                valor: 'Tipo: SG01-NZ – 1 / BRANCO',
+              },
+              {
+                titulo: 'Farol de rodagem diurna',
+                valor: 'Tipo: SG01-NZ – 1 / BRANCO',
+              },
+              {
+                titulo: 'Luzes indicadoras de direção frontal',
+                valor: 'Tipo: SJ-LED-Z10 – 2 / ÂMBAR',
+              },
+              {
+                titulo: 'Refletor Lateral',
+                valor: 'Tipo: KM206 – 2 / ÂMBAR',
+              },
+              {
+                titulo: 'Refletor traseiro',
+                valor: 'Tipo: KM206 – 1 / VERMELHO',
+              },
+              {
+                titulo: 'Lâmpada da placa de registro',
+                valor: 'Tipo: CH-2044 – 1 / BRANCO',
+              },
+              {
+                titulo: 'Luzes indicadoras de direção traseira',
+                valor: 'Tipo: SJ-LED-Z10 2 / ÂMBAR',
+              },
+              {
+                titulo: 'Luz de freio',
+                valor: 'Tipo: CH-2041 – 1 / VERMELHO',
+              },
+              {
+                titulo: 'Espelhos retrovisores',
+                valor: 'Sim',
+              },
+              {
+                titulo: 'Buzina',
+                valor: 'Sim',
+              },
+              {
+                titulo: 'Dispositivo antifurto',
+                valor: 'Sim',
+              },
+            ],
+          },
+          {
+            id: 3,
+            nome: 'Raia R2',
+            descricao: `Com autonomia de até 8 horas, nossas motos vão
+            te levar a um novo momento em sua vida. O design único
+            aliado ao conforto e autonomia da NAJA, facilitam o uso
+            diário em qualquer lugar. Além disso, você tem a segurança
+            de andar por aí em um produto totalmente legalizado.`,
+            subInfo: [
+              {
+                titulo: 'Autonomia',
+                valor: '35-55 km',
+              },
+              {
+                titulo: 'Capacidade máxima',
+                valor: '200 Kg',
+              },
+              {
+                titulo: 'Velocidade máxima',
+                valor: '61 km/h',
+              },
+            ],
+            cores: [
+              'red',
+              'black',
+              'white',
+            ],
+            images: [],
+            fichaTecnica: [
+              {
+                titulo: 'Motor',
+                valor: '2000W',
+              },
+              {
+                titulo: 'Inclinação Máxima',
+                valor: '40graus',
+              },
+              {
+                titulo: 'Velocidade Máxima',
+                valor: '61km/h',
+              },
+              {
+                titulo: 'Bateria Litium',
+                valor: '60V 20A',
+              },
+              {
+                titulo: 'Alcance / Range / Gama',
+                valor: '35-55km',
+              },
+              {
+                titulo: 'Farol / Head Light',
+                valor: 'Sim',
+              },
+              {
+                titulo: 'Horn / Guidão',
+                valor: 'Sim',
+              },
+              {
+                titulo: 'Velocímetro / Speedometer',
+                valor: 'Sim',
+              },
+              {
+                titulo: 'Retrovisor',
+                valor: 'Sim',
+              },
+              {
+                titulo: 'Suspensão Dianteira',
+                valor: 'Sim',
+              },
+              {
+                titulo: 'Suspensão Traseira',
+                valor: 'Sim',
+              },
+              {
+                titulo: 'Luz de Freio',
+                valor: 'Sim',
+              },
+              {
+                titulo: 'Alarme',
+                valor: 'Sim',
+              },
+              {
+                titulo: 'Assento Simples',
+                valor: 'Sim',
+              },
+              {
+                titulo: 'Assento Duplo',
+                valor: 'Não*',
+              },
+              {
+                titulo: 'Carregador',
+                valor: 'Sim',
+              },
+              {
+                titulo: 'Tempo de Carga',
+                valor: '6-8h',
+              },
+              {
+                titulo: 'Peso Máximo Suportado',
+                valor: '200kg',
+              },
+              {
+                titulo: 'Roda',
+                valor: '13 Polegadas',
+              },
+              {
+                titulo: 'Medidas da Caixa',
+                valor: '186*38*80',
+              },
+              {
+                titulo: 'Peso Líquido / Bruto',
+                valor: '72 /75 kg',
+              },
+            ],
+          },
+        ],
       },
     };
   },
@@ -559,8 +735,27 @@ export default {
   },
 
   methods: {
-    abrirModal() {
+    abrirModal(produtoId) {
       this.modalInfo = true;
+
+      this.produtos.lista.map((prod) => {
+        prod.images = this.arrayImages(produtoId)
+
+        if (prod.id === produtoId) {
+          this.produto = prod
+        }
+        return ''
+      })
+    },
+
+    arrayImages(produtoId) {
+      const imagesArray = [];
+
+      for (let i = 1; i < 100; i += 1) {
+        imagesArray.push(`imgs/Moto${produtoId}/image_${i}.jpg`);
+      }
+
+      return imagesArray;
     },
   },
 };
