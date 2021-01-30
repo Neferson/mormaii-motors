@@ -1,0 +1,81 @@
+// app global css in SCSS form
+
+.container-slide {
+  background-image: url('../assets/background.jpg');
+  background-position: center center;
+  background-repeat: no-repeat;
+
+  p{
+    line-height: 15px;
+    span.text-h4 {
+      display: block;
+      position: relative;
+      line-height: 48px;
+    }
+    small {
+      display: block;
+      font-size: 18px;
+    }
+  }
+
+  button::before {
+    font-size: 40px;
+  }
+
+  .slick-prev {
+    left: -14px;
+    z-index: 99;
+  }
+  .slick-next {
+    right: 5px;
+  }
+}
+
+.vue-product-spinner {
+  img {
+    max-width: 100%;
+  }
+}
+
+@media screen and (max-width: '768px') and (min-width: '420px') {
+  .container-slide {
+    .text-h4 {
+      font-size: 26px;
+    }
+
+    p{
+      line-height: 15px;
+      span.text-h4 {
+        font-size: 15px;
+        display: block;
+        position: relative;
+        line-height: 15px;
+      }
+      small {
+        font-size: 10px;
+        display: block;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: '420px') and (min-width: '200px') {
+  .container-slide {
+    .text-h4 {
+      font-size: 20px;
+    }
+
+    p{
+      span.text-h4 {
+        font-size: 14px;
+        display: block;
+        position: relative;
+        line-height: 15px;
+      }
+      small {
+        font-size: 8px;
+        display: block;
+      }
+    }
+  }
+}
