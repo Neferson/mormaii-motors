@@ -14,6 +14,8 @@
           color="teal-6"
           :size="($q.screen.lt.lg) ? 'sm' : 'md'"
           label="Modelos"
+          type="a"
+          href="#container-menu-home"
         >
           <!-- <q-menu max-width="800px">
             <div class="row no-wrap q-pa-xs" style="min-width: 500px">
@@ -111,7 +113,7 @@
       </div>
     </div>
 
-    <div class="container-menu row q-mt-lg q-pa-md">
+    <div id="container-menu-home" class="container-menu row q-mt-lg q-pa-md">
       <div
         class="col-12 col-sm-6 col-md-3 q-pl-md q-pr-md q-mb-lg"
         v-for="slider in produtos.banner"
@@ -316,6 +318,25 @@ export default {
               {
                 titulo: 'Velocidade máxima',
                 valor: '35 km/h',
+              },
+            ],
+          },
+          {
+            produtoId: 5,
+            titulo: 'Mini Bike E-BIKE',
+            image: 'imgs/5.png',
+            info: [
+              {
+                titulo: 'Autonomia',
+                valor: '20-60 km',
+              },
+              {
+                titulo: 'Capacidade máxima',
+                valor: '120 Kg',
+              },
+              {
+                titulo: 'Velocidade máxima',
+                valor: '25 km/h',
               },
             ],
           },
@@ -837,6 +858,133 @@ export default {
               },
               {
                 titulo: 'Luz dianteira',
+                valor: 'Sim',
+              },
+            ],
+          },
+          {
+            id: 5,
+            nome: 'Mini E-Bike',
+            descricao: `Com autonomia de até 8 horas, nossas motos vão
+            te levar a um novo momento em sua vida. O design único
+            aliado ao conforto e autonomia da NAJA, facilitam o uso
+            diário em qualquer lugar. Além disso, você tem a segurança
+            de andar por aí em um produto totalmente legalizado.`,
+            subInfo: [
+              {
+                titulo: 'Autonomia',
+                valor: '20-60 km',
+              },
+              {
+                titulo: 'Capacidade máxima',
+                valor: '120 Kg',
+              },
+              {
+                titulo: 'Velocidade máxima',
+                valor: '25 km/h',
+              },
+            ],
+            cores: [
+              'red',
+              'black',
+              'white',
+            ],
+            images: [],
+            fichaTecnica: [
+              {
+                titulo: 'Dimensões (C * L * A)',
+                valor: '107 cm * 45 cm * 100 cm',
+              },
+              {
+                titulo: 'Dimensões dobravél (C * L * A)',
+                valor: '107 cm * 27 cm * 73 cm',
+              },
+              {
+                titulo: 'Peso Líquido (kg)',
+                valor: '17 kg',
+              },
+              {
+                titulo: 'Quadro',
+                valor: 'Alumínio',
+              },
+              {
+                titulo: 'Guidão',
+                valor: 'Dobrável',
+              },
+              {
+                titulo: 'Pedal',
+                valor: 'Dobrável',
+              },
+              {
+                titulo: 'Capacidade máxima',
+                valor: '120 kg',
+              },
+              {
+                titulo: 'Suspensão',
+                valor: 'Mola',
+              },
+              {
+                titulo: 'Pneu',
+                valor: '12',
+              },
+              {
+                titulo: 'Freios',
+                valor: 'Disco',
+              },
+              {
+                titulo: 'Motor',
+                valor: '350 W',
+              },
+              {
+                titulo: 'Manopla de velocidade',
+                valor: 'Sim',
+              },
+              {
+                titulo: 'Pedal assistido',
+                valor: 'Sim',
+              },
+              {
+                titulo: 'Velocidade máxima',
+                valor: '35 km',
+              },
+              {
+                titulo: 'Modo de assistência',
+                valor: '3 níveis de velocidade',
+              },
+              {
+                titulo: 'Autonomia (CNTP)',
+                valor: 'Modo elétrico: 20 – 25 km / Modo assistido: 40 – 60 km',
+              },
+              {
+                titulo: 'Bateria',
+                valor: ' Lítio - 36 V / 7.5 A',
+              },
+              {
+                titulo: 'Proteção de carga',
+                valor: 'Proteção contra; curto circuito, sobrecarga, descarga excessiva, sobrecorrente, sobretensão e temperatura',
+              },
+              {
+                titulo: 'Carregador',
+                valor: 'Bivolt',
+              },
+              {
+                titulo: 'Tempo de recarga',
+                valor: '3 – 4 h',
+              },
+              {
+                titulo: 'Capacidade de rampa',
+                valor: '15°',
+              },
+              {
+                titulo: 'Índice de proteção',
+                valor: 'IP54',
+              },
+              {
+                titulo: 'Luz dianteira',
+                valor: 'Sim',
+              },
+              {
+                titulo: 'Luz traseira',
                 valor: 'Sim',
               },
             ],

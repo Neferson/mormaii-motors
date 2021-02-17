@@ -105,7 +105,7 @@
         <div class="col-lg-5 col-sm-12 col-12 q-pl-md q-pr-md q-mb-md">
           <div class="text-h4 q-mb-md">Ficha Técnica</div>
 
-          <q-markup-table separator="cell" bordered dense flat>
+          <q-markup-table separator="cell" bordered dense flat >
             <tbody>
               <tr
                 v-for="(ficha, index) in info.fichaTecnica"
@@ -114,7 +114,7 @@
                 <td class="text-left text-subtitle1 text-bold">
                   {{ ficha.titulo }}
                 </td>
-                <td class="text-right text-subtitle1">
+                <td class="text-right text-subtitle1" nowrap="true">
                   {{ ficha.valor }}
                 </td>
               </tr>
