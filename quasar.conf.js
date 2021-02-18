@@ -125,7 +125,7 @@ module.exports = function (/* ctx */) {
         short_name: 'Mormaii Motors',
         description: 'Catalogo E-Bikes mormaii',
         display: 'standalone',
-        orientation: 'portrait',
+        orientation: 'landscape',
         background_color: '#ffffff',
         theme_color: '#027be3',
         icons: [
