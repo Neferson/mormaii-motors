@@ -1,21 +1,22 @@
 <template>
   <q-layout view="lHh Lpr lFf">
 
-    <div class="row menu-container q-pa-lg" >
+    <div class="row menu-container q-pt-sm  q-pb-sm  q-pl-md q-pr-md bg-black" >
       <div class="col-7 col-sm-4">
           <q-img
-          src="imgs/logo-mormaii-motors-email.png"
-          style="max-width: 301px;"
+            src="imgs/logo-mormaii.png"
+            style="max-width: 54px;"
           />
       </div>
       <div class="col col-sm-8 text-right">
          <q-btn
           outline
-          color="teal-6"
+          color="white"
           :size="($q.screen.lt.lg) ? 'sm' : 'md'"
           label="Modelos"
           type="a"
           href="#container-menu-home"
+          class="q-mt-sm"
         >
           <!-- <q-menu max-width="800px">
             <div class="row no-wrap q-pa-xs" style="min-width: 500px">

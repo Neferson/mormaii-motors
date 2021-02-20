@@ -49,7 +49,7 @@
 
     </q-card-section>
     <q-card-section class="no-padding">
-      <div class="row bg-teal-2 text-grey-10 q-mb-lg" style="padding: 40px 15px;">
+      <div class="row bg-mormaii text-grey-10 q-mb-lg" style="padding: 40px 15px;">
         <div class="q-pt-lg q-pb-lg col-lg-12  col-md-12 col-sm-12 col-12 ">
           <q-img :src="`imgs/${info.id}.png`" class="" />
         </div>

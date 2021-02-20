@@ -122,8 +122,8 @@ module.exports = function (/* ctx */) {
       workboxOptions: {}, // only for GenerateSW
       manifest: {
         name: 'Mormaii Motors',
-        short_name: 'Mormaii Motors',
-        description: 'Catalogo E-Bikes mormaii',
+        short_name: 'Mormaii-Motors',
+        description: 'Catalogo E-Bikes Mormaii',
         display: 'standalone',
         orientation: 'any',
         background_color: '#ffffff',

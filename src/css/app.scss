@@ -1,5 +1,14 @@
 // app global css in SCSS form
 
+@font-face {
+  font-family: "Helvetica Neue";
+  src: url("../assets/fonts/HelveticaNeueLTStd-LtCn.otf") format("otf");
+}
+
+* {
+  font-family: "Helvetica Neue", Helvetica, sans-serif;
+}
+
 .container-slide {
   background-image: url('../assets/background.jpg');
   background-position: center center;
