@@ -14,13 +14,11 @@
           color="white"
           :size="($q.screen.lt.lg) ? 'sm' : 'md'"
           label="Modelos"
-          type="a"
-          href="#container-menu-home"
           class="q-mt-sm"
         >
-          <!-- <q-menu max-width="800px">
-            <div class="row no-wrap q-pa-xs" style="min-width: 500px">
-              <div class="column">
+          <q-menu max-width="800px">
+            <div class="row no-wrap q-pa-xs" style="min-width: 350px">
+              <!-- <div class="column">
                 <div class="text-h6 q-mb-md">Bikes</div>
                 <q-list separator>
                   <q-item clickable v-ripple>
@@ -42,15 +40,28 @@
 
               </div>
 
-              <q-separator vertical inset class="q-mx-lg" />
+              <q-separator vertical inset class="q-mx-lg" /> -->
 
-              <div class="column">
-                <div class="text-h6 q-mb-md">Motos</div>
+              <div class="col">
+                <!-- <div class="text-h6 q-mb-md">Motos</div> -->
                 <q-list separator>
-                <q-item clickable v-ripple>
-                <q-item-section>Single line item</q-item-section>
+                <q-item
+                  clickable
+                  v-ripple
+                  v-for="prod in produtos.banner"
+                  :key="prod.id"
+                  @click="abrirModal(prod.produtoId)"
+                >
+                  <q-item-section>
+                    <span class="text-subtitle1">
+                      {{ prod.titulo }}
+                    </span>
+                  </q-item-section>
+                  <q-item-section>
+                    <q-img :src="prod.image" />
+                  </q-item-section>
                 </q-item>
-                <q-item clickable v-ripple>
+                <!-- <q-item clickable v-ripple>
                 <q-item-section>
                 <q-item-label>Item with caption</q-item-label>
                 <q-item-label caption>Caption</q-item-label>
@@ -61,11 +72,11 @@
                 <q-item-label overline>OVERLINE</q-item-label>
                 <q-item-label>Item with caption</q-item-label>
                 </q-item-section>
-                </q-item>
+                </q-item> -->
                 </q-list>
               </div>
             </div>
-          </q-menu> -->
+          </q-menu>
         </q-btn>
       </div>
     </div>
@@ -324,7 +335,7 @@ export default {
           },
           {
             produtoId: 5,
-            titulo: 'Mini Bike E-BIKE',
+            titulo: 'MINI BIKE E-BIKE',
             image: 'imgs/5.png',
             info: [
               {
