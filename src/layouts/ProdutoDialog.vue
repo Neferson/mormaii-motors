@@ -1,6 +1,8 @@
 <template>
   <q-card>
+
     <q-card-section class="row items-center q-pb-none bg-grey-2 q-pa-lg">
+
       <q-btn
         icon="close"
         color="red"
@@ -8,61 +10,37 @@
         v-close-popup
         class="absolute-top-right q-mt-sm q-mr-sm"
       />
+
       <div class="text-h3 text-bold col-12 to">
         {{ info.nome }}
       </div>
-      <div class="row q-mt-md">
-        <div
-          class="col-12 col-sm-4 q-pl-lg q-pr-lg"
-          style="border-right: 1px solid #ddd;"
-          v-for="(prodInfo, index) in info.subInfo"
-          :key="index"
-        >
-          <div class="text-h5 text-bold">
-            {{ prodInfo.valor }}
-          </div>
-          <div class="text-subtitle1">
-             {{ prodInfo.titulo }}
-          </div>
+
+      <div
+        class="col-12 col-sm-4 gt-sm"
+        style=""
+        v-for="(prodInfo, index) in info.subInfo"
+        :key="index"
+      >
+        <div class="text-h5 text-bold">
+          {{ prodInfo.valor }}
         </div>
 
-        <!-- <div class="col-12 col-sm-6 q-pl-lg q-pr-lg" style="border-right: 1px solid #ddd;">
-          <div class="text-h5 text-bold">
-            4 há 8 horas
-          </div>
-          <div class="text-subtitle1">
-            Autonomia
-          </div>
+        <div class="text-subtitle1">
+            {{ prodInfo.titulo }}
         </div>
-
-        <div class="col-12 col-sm-2 q-pl-lg q-pr-lg">
-          <div class="text-h5 text-bold">
-            55km
-          </div>
-          <div class="text-subtitle1">
-            Velocidade
-          </div>
-        </div> -->
       </div>
 
       <q-space />
 
     </q-card-section>
+
     <q-card-section class="no-padding">
       <div class="row bg-mormaii text-grey-10 q-mb-lg" style="padding: 40px 15px;">
         <div class="q-pt-lg q-pb-lg col-lg-12  col-md-12 col-sm-12 col-12 ">
           <q-img :src="`imgs/${info.id}.png`" class="" />
         </div>
-        <!-- <div class="col-lg-12 col-md-12 col-sm-12 col-12 q-pt-lg">
-          <div class="text-h3 q-pt-xs">
-            {{ produtos.info.nome }}
-          </div>
-          <br>
-          <div class="text-h6 text-normal">
-          {{ produtos.info.descricao }}
-          </div>
-        </div> -->
       </div>
+
       <div class="row">
 
         <div

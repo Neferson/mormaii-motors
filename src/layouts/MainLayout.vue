@@ -18,61 +18,26 @@
         >
           <q-menu max-width="800px">
             <div class="row no-wrap q-pa-xs" style="min-width: 350px">
-              <!-- <div class="column">
-                <div class="text-h6 q-mb-md">Bikes</div>
-                <q-list separator>
-                  <q-item clickable v-ripple>
-                    <q-item-section>Single line item</q-item-section>
-                  </q-item>
-                  <q-item clickable v-ripple>
-                    <q-item-section>
-                      <q-item-label>Item with caption</q-item-label>
-                      <q-item-label caption>Caption</q-item-label>
-                    </q-item-section>
-                  </q-item>
-                  <q-item clickable v-ripple>
-                    <q-item-section>
-                      <q-item-label overline>OVERLINE</q-item-label>
-                      <q-item-label>Item with caption</q-item-label>
-                    </q-item-section>
-                  </q-item>
-                </q-list>
-
-              </div>
-
-              <q-separator vertical inset class="q-mx-lg" /> -->
 
               <div class="col">
-                <!-- <div class="text-h6 q-mb-md">Motos</div> -->
                 <q-list separator>
-                <q-item
-                  clickable
-                  v-ripple
-                  v-for="prod in produtos.banner"
-                  :key="prod.id"
-                  @click="abrirModal(prod.produtoId)"
-                >
-                  <q-item-section>
-                    <span class="text-subtitle1">
-                      {{ prod.titulo }}
-                    </span>
-                  </q-item-section>
-                  <q-item-section>
-                    <q-img :src="prod.image" />
-                  </q-item-section>
-                </q-item>
-                <!-- <q-item clickable v-ripple>
-                <q-item-section>
-                <q-item-label>Item with caption</q-item-label>
-                <q-item-label caption>Caption</q-item-label>
-                </q-item-section>
-                </q-item>
-                <q-item clickable v-ripple>
-                <q-item-section>
-                <q-item-label overline>OVERLINE</q-item-label>
-                <q-item-label>Item with caption</q-item-label>
-                </q-item-section>
-                </q-item> -->
+                  <q-item
+                    clickable
+                    v-ripple
+                    v-for="prod in produtos.banner"
+                    :key="prod.id"
+                    @click="abrirModal(prod.produtoId)"
+                    v-close-popup
+                  >
+                    <q-item-section>
+                      <span class="text-subtitle1">
+                        {{ prod.titulo }}
+                      </span>
+                    </q-item-section>
+                    <q-item-section>
+                      <q-img :src="prod.image" />
+                    </q-item-section>
+                  </q-item>
                 </q-list>
               </div>
             </div>
@@ -149,28 +114,6 @@
         </q-card>
       </div>
     </div>
-
-    <!-- <q-carousel
-      animated
-      v-model="slide"
-      navigation
-      infinite
-      :autoplay="true"
-      arrows
-      transition-prev="slide-right"
-      transition-next="slide-left"
-      @mouseenter="autoplay = false"
-      @mouseleave="autoplay = true"
-      class="bg-blue"
-    >
-
-      <q-carousel-slide
-        v-for="(slider, index) in produtos.banner"
-        :name="slider.produtoId"
-        :img-src="slider.image"
-        :key="index"
-      />
-    </q-carousel> -->
 
     <q-dialog
       v-model="modalInfo"
@@ -335,7 +278,7 @@ export default {
           },
           {
             produtoId: 5,
-            titulo: 'MINI BIKE E-BIKE',
+            titulo: 'MINI E-BIKE',
             image: 'imgs/5.png',
             info: [
               {
@@ -356,7 +299,7 @@ export default {
         lista: [
           {
             id: 1,
-            nome: 'Naja',
+            nome: 'NAJA',
             descricao: `Com autonomia de até 8 horas, nossas motos vão
             te levar a um novo momento em sua vida. O design único
             aliado ao conforto e autonomia da NAJA, facilitam o uso
@@ -471,7 +414,7 @@ export default {
           },
           {
             id: 2,
-            nome: 'Lince',
+            nome: 'LINCE',
             descricao: `Com autonomia de até 8 horas, nossas motos vão
             te levar a um novo momento em sua vida. O design único
             aliado ao conforto e autonomia da NAJA, facilitam o uso
@@ -638,7 +581,7 @@ export default {
           },
           {
             id: 3,
-            nome: 'Raia R2',
+            nome: 'RAIA R2',
             descricao: `Com autonomia de até 8 horas, nossas motos vão
             te levar a um novo momento em sua vida. O design único
             aliado ao conforto e autonomia da NAJA, facilitam o uso
@@ -753,7 +696,7 @@ export default {
           },
           {
             id: 4,
-            nome: 'Mountain E-Bike',
+            nome: 'MOUNTAIN E-BIKE',
             descricao: `Com autonomia de até 8 horas, nossas motos vão
             te levar a um novo momento em sua vida. O design único
             aliado ao conforto e autonomia da NAJA, facilitam o uso
@@ -876,7 +819,7 @@ export default {
           },
           {
             id: 5,
-            nome: 'Mini E-Bike',
+            nome: 'MINI E-BIKE',
             descricao: `Com autonomia de até 8 horas, nossas motos vão
             te levar a um novo momento em sua vida. O design único
             aliado ao conforto e autonomia da NAJA, facilitam o uso
