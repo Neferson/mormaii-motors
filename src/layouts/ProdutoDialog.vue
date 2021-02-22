@@ -92,8 +92,8 @@
                 <td class="text-left text-subtitle1 text-bold">
                   {{ ficha.titulo }}
                 </td>
-                <td class="text-right text-subtitle1" nowrap="true">
-                  {{ ficha.valor }}
+                <td class="text-right text-subtitle1 ellipsis" nowrap="true">
+                  <span v-html="ficha.valor"></span>
                 </td>
               </tr>
             </tbody>

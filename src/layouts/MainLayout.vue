@@ -475,11 +475,11 @@ export default {
               },
               {
                 titulo: 'Freio dianteiro',
-                valor: 'Disco, diâmetro 180 mm (hidráulico)',
+                valor: 'Disco 180 mm (hidráulico)',
               },
               {
                 titulo: 'Freio traseiro',
-                valor: 'Disco, diâmetro 180 mm (hidráulico)',
+                valor: 'Disco 180 mm (hidráulico)',
               },
               {
                 titulo: 'Suspensão Dianteira',
@@ -527,7 +527,7 @@ export default {
               },
               {
                 titulo: 'Modo de aceleração',
-                valor: '1 - Modo padrão / 2 - Modo econômico / 3 - Modo esporte',
+                valor: '1° - Modo padrão <br>2° - Modo econômico <br>3° - Modo esporte',
               },
               {
                 titulo: 'Inclinação máxima',
@@ -916,7 +916,7 @@ export default {
               },
               {
                 titulo: 'Proteção de carga',
-                valor: 'Proteção contra; curto circuito, sobrecarga, descarga excessiva, sobrecorrente, sobretensão e temperatura',
+                valor: 'Proteção contra: curto circuito, sobrecarga, descarga excessiva, <br>sobrecorrente, sobretensão e temperatura.',
               },
               {
                 titulo: 'Carregador',
