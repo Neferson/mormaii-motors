@@ -295,6 +295,63 @@ export default {
               },
             ],
           },
+          {
+            produtoId: 6,
+            titulo: 'E-MOUTAIN BIKE S',
+            image: 'imgs/6.png',
+            info: [
+              {
+                titulo: 'Autonomia',
+                valor: '35-80 km',
+              },
+              {
+                titulo: 'Capacidade máxima',
+                valor: '150 Kg',
+              },
+              {
+                titulo: 'Velocidade máxima',
+                valor: '35 km/h',
+              },
+            ],
+          },
+          {
+            produtoId: 7,
+            titulo: 'MINI E-BIKE ARTICULÁVEL',
+            image: 'imgs/7.png',
+            info: [
+              {
+                titulo: 'Autonomia',
+                valor: '30-40 km',
+              },
+              {
+                titulo: 'Capacidade máxima',
+                valor: '110 Kg',
+              },
+              {
+                titulo: 'Velocidade máxima',
+                valor: '25 km/h',
+              }
+            ],
+          },
+          {
+            produtoId: 8,
+            titulo: 'BIKE DOBRÁVEL S ',
+            image: 'imgs/8.png',
+            info: [
+              {
+                titulo: 'Autonomia',
+                valor: '25-65 km',
+              },
+              {
+                titulo: 'Capacidade máxima',
+                valor: '120 Kg',
+              },
+              {
+                titulo: 'Velocidade máxima',
+                valor: '25 km/h',
+              }
+            ],
+          },
         ],
         lista: [
           {
@@ -941,6 +998,396 @@ export default {
               {
                 titulo: 'Luz traseira',
                 valor: 'Sim',
+              },
+            ],
+          },
+          {
+            id: 6,
+            nome: 'E-MOUNTAIN BIKE S',
+            descricao: `Com autonomia de até 8 horas, nossas motos vão
+            te levar a um novo momento em sua vida. O design único
+            aliado ao conforto e autonomia da NAJA, facilitam o uso
+            diário em qualquer lugar. Além disso, você tem a segurança
+            de andar por aí em um produto totalmente legalizado.`,
+            subInfo: [
+              {
+                titulo: 'Autonomia',
+                valor: '35-80 km',
+              },
+              {
+                titulo: 'Capacidade máxima',
+                valor: '150 Kg',
+              },
+              {
+                titulo: 'Velocidade máxima',
+                valor: '35 km/h',
+              }
+            ],
+            cores: [
+              'lime-6',
+              'red',
+              'black',
+              'white',
+            ],
+            images: [],
+            fichaTecnica: [
+              {
+                titulo: 'Dimensões (C * L * A)',
+                valor: '191 cm * 76 cm * 116 cm',
+              },
+              {
+                titulo: 'Marchas',
+                valor: '21',
+              },
+              {
+                titulo: 'Peso Líquido (kg)',
+                valor: '26 kg',
+              },
+              {
+                titulo: 'Quadro',
+                valor: 'Liga de alumínio',
+              },
+              {
+                titulo: 'Guidão',
+                valor: 'Liga de alumínio',
+              },
+              {
+                titulo: 'Canote de selim',
+                valor: 'Alumínio',
+              },
+              {
+                titulo: 'Canote de selim',
+                valor: 'Alumínio',
+              },
+              {
+                titulo: 'Garfo',
+                valor: 'Liga de alumínio com suspensão com <br>trava de bloqueio',
+              },
+              {
+                titulo: 'Alavanca de câmbio',
+                valor: 'SHIMANO TX50-7',
+              },
+              {
+                titulo: 'Câmbio dianteiro',
+                valor: 'SHIMANO TZ30',
+              },
+              {
+                titulo: 'Câmbio traseiro',
+                valor: 'SHIMANO TZ50',
+              },
+              {
+                titulo: 'Pedivela',
+                valor: 'Liga de alumínio',
+              },
+              {
+                titulo: 'Cassete',
+                valor: 'SHIMANO TZ21-714-28T',
+              },
+              {
+                titulo: 'Freios',
+                valor: 'ZSTAR Disco 160 mm',
+              },
+              {
+                titulo: 'Cubo dianteiro',
+                valor: ' Liga de alumínio com QR',
+              },
+              {
+                titulo: 'Aro',
+                valor: 'Liga de alumínio',
+              },
+              {
+                titulo: 'Pneu',
+                valor: '26 x 4.0',
+              },
+              {
+                titulo: 'Pedais',
+                valor: 'Alumínio MTB',
+              },
+              {
+                titulo: 'Motor',
+                valor: '350 W',
+              },
+              {
+                titulo: 'Manopla de velocidade',
+                valor: 'Sim',
+              },
+              {
+                titulo: 'Pedal assistido',
+                valor: 'Sim',
+              },
+              {
+                titulo: 'Velocidade máxima',
+                valor: '35 km',
+              },
+              {
+                titulo: 'Autonomia (CNTP)',
+                valor: 'Elétrico: 35 km <br>Pedal assistido: 60 - 80 km',
+              },
+              {
+                titulo: 'Modo de assistência',
+                valor: 'Elétrico puro (5 turnos) <br>Assistência elétrica (5 turnos)<br> Equitação Humano puro',
+              },
+              {
+                titulo: 'Bateria',
+                valor: 'Lítio 48v 10ah',
+              },
+              {
+                titulo: 'Tempo de recarga',
+                valor: '4 – 6 h',
+              },
+              {
+                titulo: 'Proteção de sobrecarga',
+                valor: 'Sobretensão, sobrecorrente, curto circuito',
+              },
+              {
+                titulo: 'PAS',
+                valor: '12 sensor magnético, assistido de potência de pulso',
+              },
+              {
+                titulo: 'Farol',
+                valor: 'Sim',
+              },
+            ],
+          },
+          {
+            id: 7,
+            nome: 'MINI E-BIKE ARTICULÁVEL',
+            descricao: `Com autonomia de até 8 horas, nossas motos vão
+            te levar a um novo momento em sua vida. O design único
+            aliado ao conforto e autonomia da NAJA, facilitam o uso
+            diário em qualquer lugar. Além disso, você tem a segurança
+            de andar por aí em um produto totalmente legalizado.`,
+            subInfo: [
+              {
+                titulo: 'Autonomia',
+                valor: '30-40 km',
+              },
+              {
+                titulo: 'Capacidade máxima',
+                valor: '110 Kg',
+              },
+              {
+                titulo: 'Velocidade máxima',
+                valor: '25 km/h',
+              }
+            ],
+            cores: [
+              'amber-6',
+              'black',
+              'white',
+            ],
+            images: [],
+            fichaTecnica: [
+              {
+                titulo: 'Dimensões (C * L * A)',
+                valor: '125 cm * 59cm * 105 cm',
+              },
+              {
+                titulo: 'Distância entre eixos',
+                valor: '96 cm',
+              },
+              {
+                titulo: 'Dimensões articulado: (C * L * A)',
+                valor: '70 cm * 29 cm * 95 cm',
+              },
+              {
+                titulo: 'Peso Líquido (kg)',
+                valor: '17,8 kg',
+              },
+              {
+                titulo: 'Peso (kg) Bruto',
+                valor: '20,2 kg',
+              },
+              {
+                titulo: 'Capacidade máxima suportada (kg)',
+                valor: '110 kg',
+              },
+              {
+                titulo: 'Quadro',
+                valor: 'Alumínio',
+              },
+              {
+                titulo: 'Freios',
+                valor: 'Tambor',
+              },
+              {
+                titulo: 'Pneu',
+                valor: '12',
+              },
+              {
+                titulo: 'Motor',
+                valor: '250 W',
+              },
+              {
+                titulo: 'Manopla de velocidade',
+                valor: 'SIM',
+              },
+              {
+                titulo: 'Pedal assistido',
+                valor: 'SIM',
+              },
+              {
+                titulo: 'Níveis de assistência',
+                valor: '3 níveis de velocidade',
+              },
+              {
+                titulo: 'Velocidade máxima (CNTP)',
+                valor: '25 km/h',
+              },
+              {
+                titulo: 'Autonomia (CNTP)',
+                valor: 'Acionamento elétrico: 30 - 40 km <br>Auxílio por pedalada: 50 – 60 km',
+              },
+              {
+                titulo: 'Modo cruzeiro',
+                valor: 'Acionando a manopla de velocidade durante 8 segundos',
+              },
+              {
+                titulo: 'Bateria',
+                valor: 'Lítio – 36v / 10ah',
+              },
+              {
+                titulo: 'Carregador',
+                valor: 'Bivolt',
+              },
+              {
+                titulo: 'Tempo de recarga',
+                valor: '3 – 5 h',
+              },
+              {
+                titulo: 'Farol',
+                valor: 'SIM',
+              },
+              {
+                titulo: 'Buzina',
+                valor: 'SIM',
+              },
+            ],
+          },
+          {
+            id: 8,
+            nome: 'BIKE DOBRÁVEL S',
+            descricao: `Com autonomia de até 8 horas, nossas motos vão
+            te levar a um novo momento em sua vida. O design único
+            aliado ao conforto e autonomia da NAJA, facilitam o uso
+            diário em qualquer lugar. Além disso, você tem a segurança
+            de andar por aí em um produto totalmente legalizado.`,
+            subInfo: [
+              {
+                titulo: 'Autonomia',
+                valor: '25-65 km',
+              },
+              {
+                titulo: 'Capacidade máxima',
+                valor: '120 Kg',
+              },
+              {
+                titulo: 'Velocidade máxima',
+                valor: '25 km/h',
+              }
+            ],
+            cores: [
+              'red',
+              'black',
+              'white',
+            ],
+            images: [],
+            fichaTecnica: [
+              {
+                titulo: 'Dimensões (C * L * A)',
+                valor: '(122 cm * 49 cm * 108 cm)',
+              },
+              {
+                titulo: 'Distância entre eixos',
+                valor: '85 cm',
+              },
+              {
+                titulo: 'Dimensões articulado: (C * L * A)',
+                valor: '(71 cm * 34 cm * 64 cm)',
+              },
+              {
+                titulo: 'Peso Líquido (kg)',
+                valor: '20 kg',
+              },
+              {
+                titulo: 'Peso (kg) Bruto',
+                valor: '23,5 kg',
+              },
+              {
+                titulo: 'Capacidade máxima suportada (kg)',
+                valor: '120 kg',
+              },
+              {
+                titulo: 'Quadro',
+                valor: 'Liga de alumínio',
+              },
+              {
+                titulo: 'Amortecedor dianteiro',
+                valor: 'Sim',
+              },
+              {
+                titulo: 'Amortecedor traseiro',
+                valor: 'SIM',
+              },
+              {
+                titulo: 'Freios',
+                valor: 'Disco',
+              },
+              {
+                titulo: 'Pneu',
+                valor: '14',
+              },
+              {
+                titulo: 'Pedal assistido',
+                valor: 'SIM',
+              },
+              {
+                titulo: 'Motor',
+                valor: '400 W',
+              },
+              {
+                titulo: 'Velocidade máxima',
+                valor: '25 km/h',
+              },
+              {
+                titulo: 'Autonomia',
+                valor: '25-30 km / Pedal assistido: 55-65 km',
+              },
+              {
+                titulo: 'Modo de assistência',
+                valor: '3 níveis de velocidade ',
+              },
+              {
+                titulo: 'Bateria',
+                valor: '48v - 10 ah / 15ah',
+              },
+              {
+                titulo: 'Carregador',
+                valor: 'Bivolt',
+              },
+              {
+                titulo: 'Tempo de recarga',
+                valor: '5 - 6 h',
+              },
+              {
+                titulo: 'Capacidade de escalada',
+                valor: '25°',
+              },
+              {
+                titulo: 'Índice de proteção',
+                valor: 'IP 54',
+              },
+              {
+                titulo: 'Luz dianteira',
+                valor: 'LED',
+              },
+              {
+                titulo: 'Luz de freio',
+                valor: 'SIM',
+              },
+              {
+                titulo: 'Buzina',
+                valor: 'SIM',
               },
             ],
           },
