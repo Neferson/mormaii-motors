@@ -1396,10 +1396,10 @@ export default {
     };
   },
 
-   meta: {
+  meta: {
     // sets document title
     title: 'Mormaii E-Motors',
-   },
+  },
 
   computed: {
     images() {
