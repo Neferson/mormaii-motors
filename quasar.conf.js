@@ -103,7 +103,8 @@ module.exports = function (/* ctx */) {
 
       // Quasar plugins
       plugins: [
-        'QImg'
+        'QImg',
+        'Meta'
       ],
     },
 
@@ -121,7 +122,7 @@ module.exports = function (/* ctx */) {
       workboxPluginMode: 'GenerateSW', // 'GenerateSW' or 'InjectManifest'
       workboxOptions: {}, // only for GenerateSW
       manifest: {
-        name: 'Mormaii Motors',
+        name: 'Mormaii E-Motors',
         short_name: 'Mormaii-Motors',
         description: 'Catalogo E-Bikes Mormaii',
         display: 'standalone',

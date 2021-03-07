@@ -1396,6 +1396,11 @@ export default {
     };
   },
 
+   meta: {
+    // sets document title
+    title: 'Mormaii E-Motors',
+   },
+
   computed: {
     images() {
       const imagesArray = [];
